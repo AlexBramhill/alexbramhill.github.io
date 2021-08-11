@@ -1,0 +1,70 @@
+$background-color: #f06d06;
+$box-color: white;
+$text-color: black;
+$general-padding: 2rem;
+
+body {
+  background: $background-color;
+  min-height: 100vh;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.align-vert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  background: $box-color;
+  align-self: center;
+  justify-self: center;
+  padding: $general-padding;
+  border-radius: $general-padding;
+}
+
+h1:first-child {
+  margin-block-start: 0em;
+}
+
+p:last-child {
+  margin-block-end: 0em;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.button {
+  background: $box-color;
+  height: 2 * $general-padding;
+  width: 2 * $general-padding;
+  border-radius: 2 * $general-padding;
+  margin: $general-padding/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:first-child {
+    margin-left: 0em;
+  }
+
+  &:last-child {
+    margin-right: 0em;
+  }
+}
+
+.buttonList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.memeList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: $general-padding;
+}
