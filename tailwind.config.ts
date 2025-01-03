@@ -1,3 +1,4 @@
+import { subtle } from "crypto";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -11,6 +12,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        spot: "var(--spot)",
+        subtle: "var(--subtle)",
       },
     },
   },
