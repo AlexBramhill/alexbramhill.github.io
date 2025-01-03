@@ -3,7 +3,7 @@ import { LinkedIn } from "./svg/linkedin";
 
 export default function Home() {
   return (
-    <div className="grid min-h-screen items-center justify-center ">
+    <div className="grid min-h-dvh items-center justify-center ">
       <main className="grid gap-3 items-center justify-center max-w-xs">
         <span className="text-4xl font-bold">
           Alex <br />
