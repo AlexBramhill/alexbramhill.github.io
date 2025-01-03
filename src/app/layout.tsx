@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "alexbramhill.github.io",
+  title: "Alex Bramhill",
   description: "Alex Bramhill - Software developer",
 };
 
