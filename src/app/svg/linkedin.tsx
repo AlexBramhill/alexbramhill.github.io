@@ -1,7 +1,7 @@
-import * as React from "react";
+import { SVGProps } from "react";
 import { twMerge } from "tailwind-merge";
 
-export const LinkedIn = (props: React.SVGProps<SVGSVGElement>) => {
+export const LinkedIn = (props: SVGProps<SVGSVGElement>) => {
   const { className: classNameProps, ...otherProps } = props;
   return (
     <svg

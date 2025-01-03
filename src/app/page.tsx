@@ -1,3 +1,4 @@
+import { Github } from "./svg/github";
 import { LinkedIn } from "./svg/linkedin";
 
 export default function Home() {
@@ -8,9 +9,12 @@ export default function Home() {
           Alex <br />
           Bramhill
         </span>
-        <div className="mx-auto">
+        <div className="grid grid-cols-[auto_auto] gap-3 mx-auto animated-fade-in animated-delay-250ms">
           <a href="https://www.linkedin.com/in/bramhill/">
-            <LinkedIn className="h-6 w-6 animated-fade-in animated-delay-250ms" />
+            <LinkedIn className="h-7 w-7" />
+          </a>
+          <a href="https://github.com/alexbramhill/">
+            <Github className="h-7 w-7" />
           </a>
         </div>
       </main>
