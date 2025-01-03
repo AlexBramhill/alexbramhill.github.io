@@ -30,14 +30,10 @@ body {
   animation-fill-mode: forwards;
 }
 
-.animated-fade-in {
+.animate-fade-in {
   opacity: 0;
-  animation: fade-in 1s forwards;
+  animation: fade-in 3s forwards;
   animation-fill-mode: forwards;
-}
-
-.animated-delay-250ms {
-  animation-delay: 250ms;
 }
 
 @keyframes fade-in {
