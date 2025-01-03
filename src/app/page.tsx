@@ -11,7 +11,7 @@ export default function Home() {
         <hr className="w-full mt-2 mb-4 bg-foreground h-1 animated-expand animated-delay-500ms" />
         <div className="mx-auto">
           <a href="https://www.linkedin.com/in/bramhill/">
-            <LinkedIn className="h-6 w-6 fill-foreground hover:fill-subtle animated-fade-in animated-delay-1750ms" />
+            <LinkedIn className="h-6 w-6 animated-fade-in animated-delay-1750ms" />
           </a>
         </div>
       </main>
