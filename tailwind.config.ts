@@ -9,6 +9,15 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        "fade-in": "fade-in 750ms linear",
+      },
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "100" },
+        },
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

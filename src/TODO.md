@@ -1,4 +1,4 @@
 # Chores
 
-- [ ] Tidy up css
+- [ ] Commonise link rendering
 - [ ] Commonise SVG

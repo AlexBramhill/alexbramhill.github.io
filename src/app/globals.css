@@ -5,7 +5,7 @@
 :root {
   --background: #fafafa;
   --foreground: #111827;
-  --spot: #030712;
+  --spot: #1e40af;
   --subtle: #374151;
 }
 
@@ -13,34 +13,22 @@
   :root {
     --background: #111827;
     --foreground: #f4f4f5;
-    --spot: #fafafa;
+    --spot: #bfdbfe;
     --subtle: #d4d4d8;
   }
+}
+
+/* Fix for https://github.com/vercel/next.js/issues/70675  */
+nextjs-portal {
+  position: absolute;
+}
+
+p {
+  padding-top: 1rem;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.animated-expand {
-  width: 0; /* Initial width set to 0 */
-  animation: expand-from-centre 1s forwards;
-  animation-fill-mode: forwards;
-}
-
-.animate-fade-in {
-  opacity: 0;
-  animation: fade-in 3s forwards;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
