@@ -8,6 +8,6 @@ export const Header = () => (
         Bramhill
       </NavLink>
     </h1>
-    <hr className="w-auto bg-subtle  mx-auto" />
+    <hr className="w-svw bg-foreground h-0.5 mx-auto" />
   </header>
 );
