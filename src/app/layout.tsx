@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Alex Bramhill",
   description: "Alex Bramhill - Software developer",
+  appleWebApp: {
+    capable: true,
+    title: "Bramhill",
+    statusBarStyle: "black-translucent",
+  },
 };
 
 export default function RootLayout({
@@ -32,3 +37,4 @@ export default function RootLayout({
     </html>
   );
 }
+<meta name="apple-mobile-web-app-title" content="Bramhill" />;
