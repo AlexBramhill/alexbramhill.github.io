@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Alex Bramhill",
   description: "Alex Bramhill - Software developer",
   appleWebApp: {
-    capable: true,
+    capable: false,
     title: "Bramhill",
     statusBarStyle: "black-translucent",
   },
