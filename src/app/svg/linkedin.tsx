@@ -7,7 +7,14 @@ export const LinkedIn = (props: SVGProps<SVGSVGElement>) => {
     <svg
       viewBox="0 0 72 72"
       {...otherProps}
-      className={twMerge("fill-foreground hover:fill-subtle", classNameProps)}
+      className={twMerge(
+        "fill-foreground \
+        transition-color \
+        ease-in-out \
+        duration-300 \
+        hover:fill-spot",
+        classNameProps
+      )}
     >
       <g fillRule="evenodd">
         <path
