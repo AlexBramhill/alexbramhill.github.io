@@ -1,3 +1,4 @@
+import { TextLink } from "@/components/text-link";
 import { Github } from "../svg/github";
 import { LinkedIn } from "../svg/linkedin";
 
@@ -24,7 +25,8 @@ export default function Home() {
         <div className="text-left animate-fade-in opacity-0">
           <p className="pt-0">
             Backend-focused full-stack senior software developer currently
-            working at Softwire.
+            working at{" "}
+            <TextLink href={"https://www.softwire.com"}>Softwire</TextLink>.
           </p>
           <p>
             Previously studied and practiced architecture at world-leading
