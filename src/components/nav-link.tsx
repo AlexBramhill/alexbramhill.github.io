@@ -9,12 +9,11 @@ export const NavLink = ({
 }: Readonly<TextLinkProps>) => {
   const { classNameOverrides, ...restOptionsOverrides } = optionsOverrides;
 
-  const defaultClassName = "font-medium";
+  const defaultClassName =
+    "font-medium text-foreground hover:text-spot after:bg-spot after:hover:bg-spot";
 
   const options: Partial<TextLinkOptions> = {
     classNameOverrides: twMerge(defaultClassName, classNameOverrides),
-    linkColour: "foreground",
-    linkColourHover: "spot",
     ...restOptionsOverrides,
   };
 
