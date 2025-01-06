@@ -1,8 +1,5 @@
-import Link from "next/link";
 import { Github } from "../svg/github";
 import { LinkedIn } from "../svg/linkedin";
-import { TextLink } from "@/components/text-link";
-import { NavLink } from "@/components/nav-link";
 
 export default function Home() {
   return (
