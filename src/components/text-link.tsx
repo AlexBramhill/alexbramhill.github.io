@@ -37,9 +37,9 @@ export const TextLink = ({
         after:duration-300 \
         after:bg-spot \
         after:h-0.5 \
-        after:opacity-100 \
-        after:w-0 \
-        after:hover:w-full \
+        after:opacity-0 \
+        after:w-full \
+        after:hover:opacity-100 \
       `;
 
   const classNames = twMerge(defaultClassName, classNameOverrides);
