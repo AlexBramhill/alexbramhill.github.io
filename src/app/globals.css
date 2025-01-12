@@ -23,8 +23,16 @@ nextjs-portal {
   position: absolute;
 }
 
-p {
-  padding-top: 1rem;
+p:not(:first-child) {
+  @apply pt-2;
+}
+
+h1 {
+  @apply text-4xl font-bold;
+}
+
+h2 {
+  @apply text-2xl font-bold;
 }
 
 body {
