@@ -1,5 +1,5 @@
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import { Footer } from "@/_components/footer";
+import { Header } from "@/_components/header";
 
 export default function TestLayout({
   children,

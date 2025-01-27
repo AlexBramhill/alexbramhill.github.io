@@ -1,4 +1,4 @@
-import { TextLink } from "@/components/text-link";
+import { TextLink } from "@/_components/text-link";
 import { isExternal } from "util/types";
 
 export default function TestPage() {
