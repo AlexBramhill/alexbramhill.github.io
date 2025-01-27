@@ -1,4 +1,3 @@
-import { Url } from "next/dist/shared/lib/router/router";
 import { TextLink, TextLinkOptions, TextLinkProps } from "./text-link";
 import { twMerge } from "tailwind-merge";
 

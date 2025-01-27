@@ -1,11 +1,10 @@
 import { TextLink } from "@/_components/text-link";
-import { isExternal } from "util/types";
 
 export default function TestPage() {
   return (
     <div className="max-w-md mx-auto">
       <h1 className="text-lg font-bold">About me</h1>
-      I'm a backend-focused full-stack senior software developer currently
+      I&apos;m a backend-focused full-stack senior software developer currently
       working at{" "}
       <TextLink href="https://www.softwire.com/" options={{ isExternal: true }}>
         Softwire
