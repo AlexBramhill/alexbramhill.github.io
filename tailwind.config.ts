@@ -1,4 +1,3 @@
-import { subtle } from "crypto";
 import type { Config } from "tailwindcss";
 
 export default {
