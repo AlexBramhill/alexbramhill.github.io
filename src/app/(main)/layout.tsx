@@ -7,9 +7,9 @@ export default function TestLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="grid grid-rows-[auto,1fr,auto] min-h-dvh ">
+    <div className="grid grid-rows-[auto,1fr,auto] min-h-dvh">
       <Header />
-      <main className="grid place-items-center px-5 sm:px-10">{children}</main>
+      <main className="max-w-4xl mx-auto">{children}</main>
       <Footer />
     </div>
   );

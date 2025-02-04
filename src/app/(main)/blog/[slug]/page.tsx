@@ -3,8 +3,6 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
 import { PostBody } from "@/_components/blog/post-body";
-import { Header } from "@/_components/header";
-import Container from "@/_components/container";
 import { PostHeader } from "@/_components/blog/post-header";
 
 export default async function Post(props: Params) {
@@ -18,18 +16,14 @@ export default async function Post(props: Params) {
   const content = await markdownToHtml(post.content || "");
 
   return (
-    <main>
-      <Container>
-        <article className="mb-32">
-          <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-          />
-          <PostBody content={content} />
-        </article>
-      </Container>
-    </main>
+    <article className="mb-32">
+      <PostHeader
+        title={post.title}
+        coverImage={post.coverImage}
+        date={post.date}
+      />
+      <PostBody content={content} />
+    </article>
   );
 }
 

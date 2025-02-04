@@ -1,6 +1,7 @@
 export const Footer = () => (
-  <footer className="p-2 text-center">
-    <hr className="w-sm bg-subtle max-w-xs mx-auto" />
-    <span className="text-subtle text-xs p-2"></span>
+  <footer className="py-2 pt-6 text-center">
+    <span className="text-subtle text-xs p-2">
+      &copy; {new Date().getFullYear()} Alex Bramhill
+    </span>
   </footer>
 );

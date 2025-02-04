@@ -6,7 +6,7 @@ const DateFormatter = ({ dateString }: Props) => {
   const date = new Date(dateString);
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
-    month: "long",
+    month: "numeric",
     day: "numeric",
   };
   const formattedDate = date.toLocaleDateString(undefined, options);
