@@ -1,5 +1,5 @@
 import React from "react";
-import { TextLink } from "@/components/text-link";
+import { TextLink } from "@/_components/text-link";
 import { Github } from "../svg/github";
 import { LinkedIn } from "../svg/linkedin";
 
