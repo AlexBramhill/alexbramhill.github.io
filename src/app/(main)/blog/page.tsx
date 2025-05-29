@@ -6,7 +6,11 @@ export default function Index() {
 
   return (
     <div className="flex flex-col gap-20">
-      {allPosts.length > 0 && <PostSummary posts={allPosts} />}
+      {allPosts.length > 0 ? (
+        <PostSummary posts={allPosts} />
+      ) : (
+        <span>Coming soon</span>
+      )}
     </div>
   );
 }
