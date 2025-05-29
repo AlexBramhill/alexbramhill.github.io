@@ -1,4 +1,3 @@
-import Link from "next/link";
 import DateFormatter from "../date-formatter";
 import { TextLink } from "../text-link";
 
