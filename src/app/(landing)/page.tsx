@@ -23,7 +23,7 @@ const HeaderInfo = () => (
 const About = () => (
   <div>
     <p>
-      Backend-focused full-stack senior software developer currently working at{" "}
+      Backend-focused full-stack tech lead currently working at{" "}
       <TextLink href={"https://www.softwire.com"}>Softwire</TextLink>.
     </p>
     <p>
