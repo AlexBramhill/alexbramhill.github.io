@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-const VectorTextLines = () => {
+const SimplePaperAnimation: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -12,153 +12,103 @@ const VectorTextLines = () => {
     import("paper").then((paper) => {
       // Setup Paper.js
       paper.default.setup(canvas);
-      const { Point, Path, PointText, Color } = paper.default;
+      const { Point, Path, PointText, Color, Size } = paper.default;
 
-      // Canvas size
+      // Set canvas size with proper DPI scaling
       const width = window.innerWidth;
       const height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
+      const dpr = window.devicePixelRatio || 1;
+      
+      // Set actual canvas size in memory (scaled for high DPI)
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      
+      // Scale the canvas back down using CSS
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      
+      // Scale the drawing context so everything draws at the correct size
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.scale(dpr, dpr);
+      }
+      
+      // Resize the view to match logical canvas size
+      paper.default.view.viewSize = new Size(width, height);
 
-      // Create vector text
-      const text = new PointText({
-        point: new Point(width / 2, height / 2),
-        content: "VECTOR",
-        justification: "center",
-        fontSize: 100,
-        fillColor: new Color("lightgray"),
-        strokeColor: new Color("lightgray"),
-        strokeWidth: 1,
+      // Create a simple circle
+      const circle = new Path.Circle({
+        center: new Point(width / 2, height / 2),
+        radius: 50,
+        fillColor: new Color(0.2, 0.6, 1, 0.8), // Blue with transparency
+        strokeColor: new Color(0, 0, 0.8),
+        strokeWidth: 2,
       });
 
-      // Draw horizontal lines that react to vector text with variable thickness
-      const numLines = 50;
-      const spacing = 4;
+      // Create simple text
+      const text = new PointText({
+        point: new Point(width / 2, height / 2 + 100),
+        content: "Paper.js Demo",
+        justification: "center",
+        fontSize: 24,
+        fillColor: new Color(0.2, 0.2, 0.2),
+      });
 
-      // Get text bounds for intersection detection
-      const textBounds = text.bounds;
-      const lines: { remove?: () => void }[] = [];
+      // Animation variables
+      let time = 0;
 
-      function createLines() {
-        // Clear existing lines
-        lines.forEach(line => line.remove && line.remove());
-        lines.length = 0;
+      // Animation function using Paper.js's onFrame
+      paper.default.view.onFrame = (event: { delta: number }) => {
+        time += event.delta;
+        
+        // Animate the circle
+        circle.position.x = width / 2 + Math.sin(time) * 100;
+        circle.position.y = height / 2 + Math.cos(time * 0.7) * 50;
+        
+        // Change circle color based on position
+        const hue = (time * 50) % 360;
+        circle.fillColor = new Color({ hue, saturation: 0.7, brightness: 0.8 });
+        
+        // Pulse the circle size
+        const scale = 1 + Math.sin(time * 3) * 0.2;
+        circle.scaling = new Point(scale, scale);
+      };
 
-        for (let i = 0; i < numLines; i++) {
-          const y = height / 2 - (numLines / 2) * spacing + i * spacing;
-
-          // Check if this line intersects with the text bounds
-          const lineIntersectsText = textBounds && 
-            (y >= textBounds.top && y <= textBounds.bottom);
-
-          if (lineIntersectsText) {
-            // Create segments: left side, text area, right side
-            const leftStart = 0;
-            const leftEnd = textBounds.left;
-            const textStart = textBounds.left;
-            const textEnd = textBounds.right;
-            const rightStart = textBounds.right;
-            const rightEnd = width;
-
-            // Left side - thin line
-            if (leftEnd > leftStart) {
-              const leftLine = new Path();
-              leftLine.moveTo(new Point(leftStart, y));
-              leftLine.lineTo(new Point(leftEnd, y));
-              
-              const textCenter = new Point(width / 2, height / 2);
-              const distanceFromCenter = Math.abs(y - textCenter.y);
-              const maxDistance = height * 0.3;
-              const normalizedDistance = Math.min(distanceFromCenter / maxDistance, 1);
-              const noise = Math.sin(y * 0.05) * 0.2;
-              const thinThickness = 0.3 + (1 - normalizedDistance) * 1.5 + noise;
-              
-              leftLine.strokeColor = new Color("black");
-              leftLine.strokeWidth = Math.max(0.2, thinThickness);
-              leftLine.strokeCap = 'round';
-              lines.push(leftLine);
-            }
-
-            // Text area - thick, variable line
-            if (textEnd > textStart) {
-              const segmentLength = textEnd - textStart;
-              const steps = Math.max(Math.floor(segmentLength / 3), 10);
-              
-              for (let step = 0; step < steps - 1; step++) {
-                const t = step / (steps - 1);
-                const nextT = (step + 1) / (steps - 1);
-                
-                const x1 = textStart + t * segmentLength;
-                const x2 = textStart + nextT * segmentLength;
-                
-                // Variable thickness with wave pattern
-                const time = Date.now() * 0.001;
-                const wavePattern1 = Math.sin(x1 * 0.02 + i * 0.3 + time) * 0.5 + 0.5;
-                const wavePattern2 = Math.sin(x2 * 0.02 + i * 0.3 + time) * 0.5 + 0.5;
-                const thickness1 = 2 + wavePattern1 * 8; // 2 to 10
-                const thickness2 = 2 + wavePattern2 * 8; // 2 to 10
-                const avgThickness = (thickness1 + thickness2) / 2;
-                
-                const segmentLine = new Path();
-                segmentLine.moveTo(new Point(x1, y));
-                segmentLine.lineTo(new Point(x2, y));
-                segmentLine.strokeColor = new Color("black");
-                segmentLine.strokeWidth = avgThickness;
-                segmentLine.strokeCap = 'round';
-                lines.push(segmentLine);
-              }
-            }
-
-            // Right side - thin line
-            if (rightEnd > rightStart) {
-              const rightLine = new Path();
-              rightLine.moveTo(new Point(rightStart, y));
-              rightLine.lineTo(new Point(rightEnd, y));
-              
-              const textCenter = new Point(width / 2, height / 2);
-              const distanceFromCenter = Math.abs(y - textCenter.y);
-              const maxDistance = height * 0.3;
-              const normalizedDistance = Math.min(distanceFromCenter / maxDistance, 1);
-              const noise = Math.sin(y * 0.05) * 0.2;
-              const thinThickness = 0.3 + (1 - normalizedDistance) * 1.5 + noise;
-              
-              rightLine.strokeColor = new Color("black");
-              rightLine.strokeWidth = Math.max(0.2, thinThickness);
-              rightLine.strokeCap = 'round';
-              lines.push(rightLine);
-            }
-          } else {
-            // Line doesn't intersect text - draw a thin line across the whole width
-            const line = new Path();
-            line.moveTo(new Point(0, y));
-            line.lineTo(new Point(width, y));
-            
-            const textCenter = new Point(width / 2, height / 2);
-            const distanceFromCenter = Math.abs(y - textCenter.y);
-            const maxDistance = height * 0.3;
-            const normalizedDistance = Math.min(distanceFromCenter / maxDistance, 1);
-            const noise = Math.sin(y * 0.05) * 0.2;
-            const thinThickness = 0.3 + (1 - normalizedDistance) * 1.5 + noise;
-            
-            line.strokeColor = new Color("black");
-            line.strokeWidth = Math.max(0.2, thinThickness);
-            line.strokeCap = 'round';
-            lines.push(line);
-          }
+      // Handle window resize
+      const handleResize = () => {
+        const newWidth = window.innerWidth;
+        const newHeight = window.innerHeight;
+        const dpr = window.devicePixelRatio || 1;
+        
+        // Set actual canvas size in memory (scaled for high DPI)
+        canvas.width = newWidth * dpr;
+        canvas.height = newHeight * dpr;
+        
+        // Scale the canvas back down using CSS
+        canvas.style.width = newWidth + 'px';
+        canvas.style.height = newHeight + 'px';
+        
+        // Scale the drawing context
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          ctx.scale(dpr, dpr);
         }
-      }
+        
+        // Update Paper.js view size
+        paper.default.view.viewSize = new Size(newWidth, newHeight);
+        
+        // Update text position
+        text.position = new Point(newWidth / 2, newHeight / 2 + 100);
+      };
 
-      // Initial creation
-      createLines();
+      window.addEventListener('resize', handleResize);
 
-      // Animation loop
-      const animationInterval = setInterval(() => {
-        createLines();
-      }, 50); // Update every 50ms for smooth animation
-
+      // Cleanup function
       return () => {
-        clearInterval(animationInterval);
-        paper.default.project.clear();
+        window.removeEventListener('resize', handleResize);
+        if (paper.default.project) {
+          paper.default.project.clear();
+        }
       };
     }).catch((error) => {
       console.error("Failed to load Paper.js:", error);
@@ -166,11 +116,13 @@ const VectorTextLines = () => {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      style={{ display: "block", width: "100vw", height: "100vh" }}
-    />
+    <div className="w-full h-screen bg-gray-50">
+      <canvas
+        ref={canvasRef}
+        className="block w-full h-full"
+      />
+    </div>
   );
 };
 
-export default VectorTextLines;
+export default SimplePaperAnimation;
