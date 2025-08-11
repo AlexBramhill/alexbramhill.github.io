@@ -1,14 +1,12 @@
-"use client";
-import React from "react";
+"use client"
+import { particleSketch } from "@/libs/p5/sketches/particleSketch";
 import dynamic from "next/dynamic";
 
-const P5Animation = dynamic(() => import("@/components/p5-animation"), {
-  loading: () => <div className="w-full h-screen bg-gray-900 flex items-center justify-center text-white">Loading p5.js animation...</div>,
-  ssr: false, // Skip server rendering to avoid p5.js issues
+// Dynamically load the wrapper to ensure it runs only on the client
+const P5Wrapper = dynamic(() => import("@/components/p5-wrapper"), {
+  ssr: false,
 });
 
-export default function Home() {
-  return (
-    <P5Animation />
-  );
+export default function HomePage() {
+  return <P5Wrapper sketch={particleSketch} />;
 }
