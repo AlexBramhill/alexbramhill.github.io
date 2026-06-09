@@ -6,6 +6,8 @@ export const LinkedIn = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="0 0 72 72"
+      width="28"
+      height="28"
       {...otherProps}
       className={twMerge(
         "fill-foreground \
