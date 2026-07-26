@@ -27,7 +27,7 @@ const About = () => (
             public sectors.
         </p>
         <p>
-            Previously studied and practiced architecture at world-leading
+            Previously studied and practised architecture at world-leading
             universities and firms, specialising in machine learning and computational
             complex geometry.
         </p>
