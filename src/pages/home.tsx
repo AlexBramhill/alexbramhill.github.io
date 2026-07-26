@@ -22,8 +22,9 @@ const HeaderInfo = () => (
 const About = () => (
     <div>
         <p>
-            Backend-focused full-stack tech lead currently working at{" "}
-            <TextLink href={new URL("https://www.softwire.com")}>Softwire</TextLink>.
+            Backend-focused Full-Stack Tech Lead at {" "}
+            <TextLink href={new URL("https://www.softwire.com")}>Softwire</TextLink>, working in the financial and
+            public sectors.
         </p>
         <p>
             Previously studied and practiced architecture at world-leading
