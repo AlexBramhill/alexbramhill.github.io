@@ -17,20 +17,12 @@
 }
 
 @font-face {
-    font-family: "Geist";
-    src: url("./assets/fonts/Geist[wght].woff2") format("woff2");
-    font-weight: 100 900;
+    font-family: "Space Grotesk";
+    src: url("./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf");
+    font-weight: 300 900;
     font-style: normal;
     font-display: block;
 
-}
-
-@font-face {
-    font-family: "Geist";
-    src: url("./assets/fonts/Geist-Italic[wght].woff2") format("woff2");
-    font-weight: 100 900;
-    font-style: italic;
-    font-display: block;
 }
 
 @theme {
@@ -38,8 +30,7 @@
     --color-foreground: var(--foreground);
     --color-spot: var(--spot);
     --color-subtle: var(--subtle);
-    --font-sans: "Geist", sans-serif;
-    --font-mono: "Geist Mono", monospace;
+    --font-sans: "Space Grotesk", sans-serif;
     --animate-fade-in: fade-in 1000ms linear forwards;
 }
 
@@ -57,11 +48,11 @@ body {
     color: var(--foreground);
     background: var(--background);
     font-family: var(--font-sans), sans-serif;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 p:not(:first-child) {
-    @apply pt-2;
+    @apply pt-4;
 }
 
 h1 {
