@@ -1,14 +1,10 @@
 export type TextLinkProps = {
-    href: URL;
-    children: React.ReactNode;
+  href: URL;
+  children: React.ReactNode;
 };
 
-export const TextLink = ({
-                             href,
-                             children,
-                         }: Readonly<TextLinkProps>) => {
-
-    const classNames = `
+export const TextLink = ({ href, children }: Readonly<TextLinkProps>) => {
+  const classNames = `
         relative
         text-spot
         after:absolute
@@ -23,7 +19,9 @@ export const TextLink = ({
         hover:after:opacity-100
     `;
 
-    return <a href={href.toString()} className={classNames}>
-        {children}
+  return (
+    <a href={href.toString()} className={classNames}>
+      {children}
     </a>
+  );
 };
