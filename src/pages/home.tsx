@@ -4,11 +4,11 @@ import { TextLink } from "../components/text-link.tsx";
 
 const HeaderInfo = () => (
   <div className="grid grid-cols-[1fr_auto] gap-3 items-end">
-    <h1 className="text-4xl font-bold">
+    <h1>
       Alex <br />
       Bramhill
     </h1>
-    <div className="grid gap-y-6 gap-x-3 mb-2 grid-cols-[auto_auto]">
+    <div className="grid gap-x-3 mb-2 grid-cols-[auto_auto]">
       <a href="https://github.com/alexbramhill/">
         <Github className="h-7 w-7" />
       </a>
