@@ -1,6 +1,6 @@
 import { CenteredLayout } from "@/layouts/centered-layout.tsx";
-import { Github } from "@/components/icons/Github.tsx";
-import { LinkedIn } from "@/components/icons/Linkedin.tsx";
+import { Github } from "@/components/icons/github.tsx";
+import { LinkedIn } from "@/components/icons/linkedin.tsx";
 import { TextLink } from "@/components/text-link.tsx";
 
 const HeaderInfo = () => (
