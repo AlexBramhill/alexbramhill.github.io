@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 import {
-  Outlet,
   createRootRoute,
   HeadContent,
-  Scripts,
   Link,
+  Outlet,
+  Scripts,
 } from "@tanstack/react-router";
 import "@/global.css";
 import { siteUrl } from "@/lib/site.ts";
