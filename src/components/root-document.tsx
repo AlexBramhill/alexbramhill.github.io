@@ -4,13 +4,13 @@ import "@/global.css";
 
 export function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" className="no-transitions">
+    <html lang="en" className="no-transitions" suppressHydrationWarning>
       <head>
         <HeadContent />
         <script
           dangerouslySetInnerHTML={{
             __html:
-              'window.addEventListener("load", function () { document.documentElement.classList.remove("no-transitions"); });',
+              'document.documentElement.classList.remove("no-transitions");',
           }}
         />
       </head>
