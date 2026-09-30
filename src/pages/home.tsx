@@ -1,3 +1,4 @@
+import { CenteredLayout } from "@/layouts/centered-layout.tsx";
 import { Github } from "@/components/icons/Github.tsx";
 import { LinkedIn } from "@/components/icons/Linkedin.tsx";
 import { TextLink } from "@/components/text-link.tsx";
@@ -36,11 +37,9 @@ const About = () => (
 
 export function Home() {
   return (
-    <div className="grid place-items-center min-h-dvh px-5 sm:px-10">
-      <div className="grid gap-y-6 max-w-[22rem]">
-        <HeaderInfo />
-        <About />
-      </div>
-    </div>
+    <CenteredLayout>
+      <HeaderInfo />
+      <About />
+    </CenteredLayout>
   );
 }

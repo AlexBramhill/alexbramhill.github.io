@@ -1,16 +1,15 @@
 import { Link } from "@tanstack/react-router";
+import { CenteredLayout } from "@/layouts/centered-layout.tsx";
 
 export function NotFound() {
   return (
-    <div className="grid place-items-center min-h-dvh px-5 sm:px-10">
-      <div className="grid gap-y-4 max-w-[22rem]">
-        <h1>Not found</h1>
-        <p>
-          <Link to="/" className="text-spot">
-            Back home
-          </Link>
-        </p>
-      </div>
-    </div>
+    <CenteredLayout className="gap-y-4">
+      <h1>Not found</h1>
+      <p>
+        <Link to="/" className="text-spot">
+          Back home
+        </Link>
+      </p>
+    </CenteredLayout>
   );
 }
