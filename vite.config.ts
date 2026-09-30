@@ -12,6 +12,7 @@ export default defineConfig({
         enabled: true,
         crawlLinks: true,
       },
+      pages: [{ path: "/404" }],
     }),
     react(),
     babel({ presets: [reactCompilerPreset()] }),
