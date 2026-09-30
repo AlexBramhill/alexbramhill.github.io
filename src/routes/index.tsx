@@ -1,6 +1,15 @@
-import { Github } from "../components/icons/Github.tsx";
-import { LinkedIn } from "../components/icons/Linkedin.tsx";
-import { TextLink } from "../components/text-link.tsx";
+import { createFileRoute } from "@tanstack/react-router";
+import { Github } from "@/components/icons/Github.tsx";
+import { LinkedIn } from "@/components/icons/Linkedin.tsx";
+import { TextLink } from "@/components/text-link.tsx";
+import { siteUrl } from "@/lib/site.ts";
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [{ rel: "canonical", href: `${siteUrl}/` }],
+  }),
+  component: Home,
+});
 
 const HeaderInfo = () => (
   <div className="grid grid-cols-[1fr_auto] gap-3 items-end">
@@ -34,7 +43,7 @@ const About = () => (
   </div>
 );
 
-export default function Home() {
+function Home() {
   return (
     <div className="grid place-items-center min-h-dvh px-5 sm:px-10">
       <div className="grid gap-y-6 max-w-[22rem]">
