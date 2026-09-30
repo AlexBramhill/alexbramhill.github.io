@@ -97,9 +97,16 @@ function NotFound() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="no-transitions">
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'window.addEventListener("load", function () { document.documentElement.classList.remove("no-transitions"); });',
+          }}
+        />
+        <title>Alex Bramhill</title>
       </head>
       <body>
         {children}

@@ -50,6 +50,11 @@ body {
   font-weight: 300;
 }
 
+.no-transitions,
+.no-transitions * {
+  transition: none !important;
+}
+
 p:not(:first-child) {
   @apply pt-4;
 }
