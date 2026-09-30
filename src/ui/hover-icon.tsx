@@ -10,7 +10,7 @@ export const HoverIcon = ({
     height="28"
     {...props}
     className={twMerge(
-      "fill-foreground transition-colors ease-in-out duration-300 hover:fill-spot",
+      "fill-foreground transition-[fill] duration-300 ease-in-out hover:fill-spot",
       classNameProps,
     )}
   />

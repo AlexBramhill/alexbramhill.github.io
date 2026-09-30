@@ -30,17 +30,6 @@
   --color-spot: var(--spot);
   --color-subtle: var(--subtle);
   --font-sans: "Space Grotesk", sans-serif;
-  --animate-fade-in: fade-in 1000ms linear forwards;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 body {
@@ -48,13 +37,6 @@ body {
   background: var(--background);
   font-family: var(--font-sans), sans-serif;
   font-weight: 300;
-}
-
-.no-transitions *,
-.no-transitions *::before,
-.no-transitions *::after {
-  transition: none !important;
-  animation: none !important;
 }
 
 p:not(:first-child) {
