@@ -4,7 +4,7 @@ import { TextLink } from "@/ui/text-link.tsx";
 
 export function NotFound() {
   return (
-    <CenteredLayout className="gap-y-4">
+    <CenteredLayout>
       <h1>Not found</h1>
       <p>
         <TextLink href={new URL("/", siteUrl)}>Back home</TextLink>
