@@ -1,5 +1,5 @@
 import type { SVGProps } from "react";
-import { HoverIcon } from "./hover-icon.tsx";
+import { HoverIcon } from "@/ui/hover-icon.tsx";
 
 export const Github = (props: SVGProps<SVGSVGElement>) => (
   <HoverIcon

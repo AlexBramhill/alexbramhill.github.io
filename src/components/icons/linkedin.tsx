@@ -1,5 +1,5 @@
 import type { SVGProps } from "react";
-import { HoverIcon } from "./hover-icon.tsx";
+import { HoverIcon } from "@/ui/hover-icon.tsx";
 
 export const LinkedIn = (props: SVGProps<SVGSVGElement>) => (
   <HoverIcon viewBox="0 0 72 72" {...props}>

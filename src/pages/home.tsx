@@ -1,7 +1,7 @@
 import { CenteredLayout } from "@/layouts/centered-layout.tsx";
 import { Github } from "@/components/icons/github.tsx";
 import { LinkedIn } from "@/components/icons/linkedin.tsx";
-import { TextLink } from "@/components/text-link.tsx";
+import { TextLink } from "@/ui/text-link.tsx";
 
 const HeaderInfo = () => (
   <div className="grid grid-cols-[1fr_auto] gap-3 items-end">
