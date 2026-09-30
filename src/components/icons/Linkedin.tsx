@@ -1,8 +1,10 @@
 import { twMerge } from "tailwind-merge";
 import type { SVGProps } from "react";
+import { useMounted } from "@/lib/use-mounted.ts";
 
 export const LinkedIn = (props: SVGProps<SVGSVGElement>) => {
   const { className: classNameProps, ...otherProps } = props;
+  const mounted = useMounted();
   return (
     <svg
       viewBox="0 0 72 72"
@@ -10,11 +12,8 @@ export const LinkedIn = (props: SVGProps<SVGSVGElement>) => {
       height="28"
       {...otherProps}
       className={twMerge(
-        "fill-foreground \
-                transition-color \
-                ease-in-out \
-                duration-300 \
-                hover:fill-spot",
+        "fill-foreground hover:fill-spot",
+        mounted && "transition-colors ease-in-out duration-300",
         classNameProps,
       )}
     >
