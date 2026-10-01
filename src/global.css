@@ -4,7 +4,7 @@
   --background: #fafafa;
   --foreground: #111827;
   --spot: #1e40af;
-  --subtle: #374151;
+  --subtle: #a0a3aa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,7 +12,7 @@
     --background: #111827;
     --foreground: #f4f4f5;
     --spot: #bfdbfe;
-    --subtle: #d4d4d8;
+    --subtle: #52668e;
   }
 }
 

@@ -4,6 +4,7 @@ import babel from "@rolldown/plugin-babel";
 import * as path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { getCommitHash } from "./config/commit-hash.ts";
 
 export default defineConfig({
   plugins: [
@@ -18,6 +19,9 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
+  define: {
+    __COMMIT_HASH__: JSON.stringify(getCommitHash()),
+  },
   resolve: {
     alias: { "@": path.resolve(import.meta.dirname, "./src") },
   },
