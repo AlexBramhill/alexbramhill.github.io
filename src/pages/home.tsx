@@ -24,8 +24,8 @@ const About = () => (
   <div>
     <p>
       Full stack tech lead at{" "}
-      <TextLink href={new URL("https://www.softwire.com")}>Softwire</TextLink>,
-      working in the financial and public sectors.
+      <TextLink href="https://www.softwire.com">Softwire</TextLink>, working in
+      the financial and public sectors.
     </p>
     <p>
       Previously studied and practised architecture at world-leading

@@ -1,39 +1,32 @@
-import type { ReactNode } from "react";
+import type { ComponentProps } from "react";
+import { createLink } from "@tanstack/react-router";
 import { twMerge } from "tailwind-merge";
 
-export type TextLinkProps = {
-  href: URL;
-  className?: string;
-  children: ReactNode;
-};
-
 export const TextLink = ({
-  href,
   className,
-  children,
-}: Readonly<TextLinkProps>) => {
-  const classNames = twMerge(
-    `
-      relative
-      text-spot
-      after:absolute
-      after:left-0
-      after:-bottom-0.5
-      after:ease-in-out
-      after:duration-300
-      after:bg-spot
-      after:h-0.5
-      after:opacity-0
-      after:w-full
-      hover:after:opacity-100
-      focus-visible:after:opacity-100
-    `,
-    className,
-  );
+  ...props
+}: Readonly<ComponentProps<"a">>) => (
+  <a
+    {...props}
+    className={twMerge(
+      `
+        relative
+        text-spot
+        after:absolute
+        after:left-0
+        after:-bottom-0.5
+        after:h-0.5
+        after:w-full
+        after:bg-spot
+        after:opacity-0
+        after:duration-300
+        after:ease-in-out
+        hover:after:opacity-100
+        focus-visible:after:opacity-100
+      `,
+      className,
+    )}
+  />
+);
 
-  return (
-    <a href={href.toString()} className={classNames}>
-      {children}
-    </a>
-  );
-};
+export const RouteTextLink = createLink(TextLink);

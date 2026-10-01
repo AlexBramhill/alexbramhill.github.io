@@ -17,7 +17,7 @@ export default defineConfig([
       js.configs.recommended,
       tseslint.configs.recommended,
       reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite(),
+      reactRefresh.configs.vite({ extraHOCs: ["createLink"] }),
       eslintConfigPrettier,
     ],
     languageOptions: { globals: globals.browser },
