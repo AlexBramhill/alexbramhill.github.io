@@ -10,10 +10,10 @@ const HeaderInfo = () => (
       Bramhill
     </h1>
     <div className="grid gap-x-3 mb-2 grid-cols-[auto_auto]">
-      <a href="https://github.com/alexbramhill/">
+      <a href="https://github.com/alexbramhill/" aria-label="GitHub">
         <Github className="h-7 w-7" />
       </a>
-      <a href="https://www.linkedin.com/in/bramhill/">
+      <a href="https://www.linkedin.com/in/bramhill/" aria-label="LinkedIn">
         <LinkedIn className="h-7 w-7" />
       </a>
     </div>

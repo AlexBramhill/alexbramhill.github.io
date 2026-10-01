@@ -8,6 +8,7 @@ export const HoverIcon = ({
   <svg
     width="28"
     height="28"
+    aria-hidden="true"
     {...props}
     className={twMerge(
       "fill-foreground transition-[fill] duration-300 ease-in-out hover:fill-spot",
