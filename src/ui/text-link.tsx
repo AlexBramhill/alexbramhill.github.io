@@ -19,8 +19,7 @@ export const TextLink = ({
         after:w-full
         after:bg-spot
         after:opacity-0
-        after:duration-300
-        after:ease-in-out
+        after:transition-opacity
         hover:after:opacity-100
         focus-visible:after:opacity-100
       `,

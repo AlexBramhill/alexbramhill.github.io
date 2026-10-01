@@ -11,7 +11,7 @@ export const HoverIcon = ({
     aria-hidden="true"
     {...props}
     className={twMerge(
-      "fill-foreground transition-[fill] duration-300 ease-in-out hover:fill-spot in-focus-visible:fill-spot",
+      "fill-foreground transition-[fill] hover:fill-spot in-focus-visible:fill-spot",
       classNameProps,
     )}
   />

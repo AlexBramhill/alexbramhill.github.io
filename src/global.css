@@ -31,6 +31,8 @@
   --color-spot: var(--spot);
   --color-subtle: var(--subtle);
   --font-sans: "Space Grotesk", sans-serif;
+  --default-transition-duration: 300ms;
+  --default-transition-timing-function: ease-in-out;
 }
 
 body {
