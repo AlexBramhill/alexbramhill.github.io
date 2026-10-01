@@ -26,6 +26,7 @@ export const TextLink = ({
       after:opacity-0
       after:w-full
       hover:after:opacity-100
+      focus-visible:after:opacity-100
     `,
     className,
   );
