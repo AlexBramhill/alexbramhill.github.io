@@ -20,7 +20,14 @@ export default defineConfig([
       reactRefresh.configs.vite({ extraHOCs: ["createLink"] }),
       eslintConfigPrettier,
     ],
+  },
+  {
+    files: ["src/**/*.{ts,tsx}"],
     languageOptions: { globals: globals.browser },
+  },
+  {
+    files: ["*.config.ts"],
+    languageOptions: { globals: globals.node },
   },
   {
     files: ["src/routes/**/*.{ts,tsx}"],
@@ -28,5 +35,4 @@ export default defineConfig([
       "react-refresh/only-export-components": "off",
     },
   },
-  tseslint.configs.recommended,
 ]);
