@@ -1,6 +1,7 @@
 import type { RootRouteOptions } from "@tanstack/react-router";
 import { siteUrl } from "@/lib/site.ts";
 import spaceGroteskFontUrl from "@/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf?url";
+import globalCssUrl from "@/global.css?url";
 
 const siteDescription =
   "Alex Bramhill is a full-stack tech lead currently working at Softwire";
@@ -50,6 +51,7 @@ export const rootHead: RootRouteOptions["head"] = () => {
       },
     ],
     links: [
+      { rel: "stylesheet", href: globalCssUrl },
       { rel: "icon", href: "/favicon.ico" },
       {
         rel: "preload",
