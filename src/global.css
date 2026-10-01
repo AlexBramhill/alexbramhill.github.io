@@ -21,7 +21,7 @@
   src: url("./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf");
   font-weight: 300 900;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 @theme {
