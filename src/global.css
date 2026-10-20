@@ -17,10 +17,9 @@
 }
 
 @font-face {
-  font-family: "Space Grotesk";
-  src: url("./assets/fonts/SpaceGrotesk-VariableFont_wght.woff2")
-    format("woff2");
-  font-weight: 300 900;
+  font-family: "IBM Plex Serif";
+  src: url("./assets/fonts/IBMPlexSerif-VariableFont.woff2") format("woff2");
+  font-weight: 100 700;
   font-style: normal;
   font-display: block;
 }
@@ -30,7 +29,7 @@
   --color-foreground: var(--foreground);
   --color-spot: var(--spot);
   --color-subtle: var(--subtle);
-  --font-sans: "Space Grotesk", sans-serif;
+  --font-serif: "IBM Plex Serif", serif;
   --default-transition-duration: 300ms;
   --default-transition-timing-function: ease-in-out;
 }
@@ -38,7 +37,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-serif), serif;
   font-weight: 300;
 }
 
@@ -47,9 +46,11 @@ p:not(:first-child) {
 }
 
 h1 {
-  @apply text-4xl font-bold;
+  @apply text-4xl;
+  font-weight: 500;
 }
 
 h2 {
-  @apply text-2xl font-bold;
+  @apply text-2xl;
+  font-weight: 500;
 }

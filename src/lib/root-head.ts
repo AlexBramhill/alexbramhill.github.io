@@ -1,6 +1,6 @@
 import type { RootRouteOptions } from "@tanstack/react-router";
 import { siteUrl } from "@/lib/site.ts";
-import spaceGroteskFontUrl from "@/assets/fonts/SpaceGrotesk-VariableFont_wght.woff2?url";
+import plexSerifFontUrl from "@/assets/fonts/IBMPlexSerif-VariableFont.woff2?url";
 import globalCssUrl from "@/global.css?url";
 
 const siteDescription =
@@ -55,7 +55,7 @@ export const rootHead: RootRouteOptions["head"] = () => {
       { rel: "icon", href: "/favicon.ico" },
       {
         rel: "preload",
-        href: spaceGroteskFontUrl,
+        href: plexSerifFontUrl,
         as: "font",
         type: "font/woff2",
         crossOrigin: "anonymous",
