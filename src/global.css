@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light dark;
   --background: #fafafa;
   --foreground: #111827;
   --spot: #1e40af;
@@ -39,6 +40,11 @@ body {
   background: var(--background);
   font-family: var(--font-serif), serif;
   font-weight: 300;
+}
+
+::selection {
+  color: var(--background);
+  background: var(--spot);
 }
 
 p:not(:first-child) {
