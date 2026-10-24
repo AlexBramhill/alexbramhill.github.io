@@ -54,7 +54,31 @@ export const rootHead: RootRouteOptions["head"] = () => {
     ],
     links: [
       { rel: "stylesheet", href: globalCssUrl },
-      { rel: "icon", href: "/favicon.ico" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "192x192",
+        href: "/android-chrome-192x192.png",
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
+      { rel: "manifest", href: "/site.webmanifest" },
       {
         rel: "preload",
         href: plexSerifFontUrl,
