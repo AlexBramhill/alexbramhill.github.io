@@ -5,10 +5,17 @@ import { defineConfig } from "eslint/config";
 import { reactRefresh } from "eslint-plugin-react-refresh";
 import reactHooks from "eslint-plugin-react-hooks";
 import eslintConfigPrettier from "eslint-config-prettier";
+import * as mdx from "eslint-plugin-mdx";
 
 export default defineConfig([
   {
     ignores: ["**/dist/**", "**/node_modules/**", "src/routeTree.gen.ts"],
+  },
+  {
+    ...mdx.flat,
+    processor: mdx.createRemarkProcessor({
+      lintCodeBlocks: true,
+    }),
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],

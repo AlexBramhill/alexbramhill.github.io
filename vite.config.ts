@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
+import mdx from "@mdx-js/rollup";
 import * as path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
@@ -16,6 +17,7 @@ export default defineConfig({
       },
       pages: [{ path: "/404" }],
     }),
+    { enforce: "pre", ...mdx({/* jsxImportSource: …, otherOptions… */}) },
     react(),
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
