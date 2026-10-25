@@ -1,6 +1,6 @@
 import type { RootRouteOptions } from "@tanstack/react-router";
 import { siteUrl } from "@/lib/site.ts";
-import spaceGroteskFontUrl from "@/assets/fonts/SpaceGrotesk-VariableFont_wght.woff2?url";
+import plexSerifFontUrl from "@/assets/fonts/IBMPlexSerif-VariableFont.woff2?url";
 import globalCssUrl from "@/global.css?url";
 
 const siteDescription =
@@ -11,6 +11,8 @@ export const rootHead: RootRouteOptions["head"] = () => {
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+      { name: "color-scheme", content: "light dark" },
+      { name: "darkreader-lock" },
       { title: "Alex Bramhill" },
       { name: "description", content: siteDescription },
       { name: "author", content: "Alex Bramhill" },
@@ -52,10 +54,34 @@ export const rootHead: RootRouteOptions["head"] = () => {
     ],
     links: [
       { rel: "stylesheet", href: globalCssUrl },
-      { rel: "icon", href: "/favicon.ico" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "192x192",
+        href: "/android-chrome-192x192.png",
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
+      { rel: "manifest", href: "/site.webmanifest" },
       {
         rel: "preload",
-        href: spaceGroteskFontUrl,
+        href: plexSerifFontUrl,
         as: "font",
         type: "font/woff2",
         crossOrigin: "anonymous",

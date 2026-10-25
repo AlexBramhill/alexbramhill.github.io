@@ -28,9 +28,16 @@ const About = () => (
       the financial and public sectors.
     </p>
     <p>
-      Previously studied and practised architecture at world-leading
-      universities and firms, specialising in machine learning and computational
-      complex geometry.
+      Studied architecture at{" "}
+      <TextLink href="https://www.ucl.ac.uk/bartlett/architecture">
+        The Bartlett
+      </TextLink>{" "}
+      and practised at{" "}
+      <TextLink href="https://www.fosterandpartners.com">
+        Foster + Partners
+      </TextLink>{" "}
+      and <TextLink href="https://dkfs.io">DKFS</TextLink>, specialising in
+      machine learning and computational geometry.
     </p>
   </div>
 );
